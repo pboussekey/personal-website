@@ -14,7 +14,6 @@ import { CvComponent } from './cv/cv.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FitScreenDirective } from './shared/fit-screen/fit-screen.directive';
 import { ContactComponent } from './contact/contact.component';
-import {ToolTipModule} from 'angular2-tooltip'
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import {ToolTipModule} from 'angular2-tooltip'
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    Routing,
-    ToolTipModule
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -111,7 +111,6 @@
     margin-top : 4rem;
     background : @clr-darkblue;
     cursor : pointer;
-    overflow: hidden;
     padding : 1rem;
     @media(max-width : 600px){
         padding : 1rem 0.5rem;
@@ -131,8 +130,9 @@
         margin : 2rem 2rem 4rem;
         width : 60%;
         z-index: 1;
+        position: relative;
         &.disabled{
-          opacity : 0.2;
+            opacity : 0.3;
         }
         .logo{
             width : 4.2rem;
@@ -143,7 +143,7 @@
             line-height : 4rem;
             text-align : center;
             border : solid 1px #FFF;
-            margin-right: 0.3rem;
+            margin-right: 1rem;
             background-size : cover;
             flex-shrink : 0;
         }
@@ -163,34 +163,8 @@
                 text-overflow : ellipsis;
                 white-space: nowrap;
             }
-            .infos{
-                font-size : 2.4rem;
-                line-height: 3rem;
-                overflow : hidden;
-                text-overflow : ellipsis;
-                white-space: nowrap;
-            }
-            .details{
-                margin-top: 1.5rem;
-                font-style: italic;
-                display : none;
 
-            }
-            .tags{
-                margin-top: 1rem;
-                color : @clr-yellow;
-                font-style: normal;
-                font-weight: bold;
-                margin-left: auto;
-                display : none;
-                span{
-                    display : inline-block;
-                    padding-right: 1rem;
-                }
-            }
-            &:hover > .details, &:hover > .tags{
-                display : block;
-            }
+
 
             @media(max-width : 800px){
                 max-height : 100%;
@@ -217,7 +191,67 @@
             white-space: nowrap;
             border : solid 1px #FFF;
         }
-        position : relative;
+        .tooltip{
+          display : none;
+          position: absolute;
+          bottom : calc(~"100% + 1rem");
+          width: 100%;
+          background : #000;
+          z-index: 3;
+          border : solid 1px #FFF;
+          .tooltip-content{
+            position: relative;
+            padding : 1rem;
+            &:after, &:before {
+              	top: 100%;
+              	left: 50%;
+              	border: solid transparent;
+              	content: " ";
+              	height: 0;
+              	width: 0;
+              	position: absolute;
+              	pointer-events: none;
+              }
+
+              &:after {
+              	border-color: rgba(0, 0, 0, 0);
+              	border-top-color: #000;
+              	border-width: 1rem;
+              	margin-left: -1rem;
+              }
+              &:before {
+              	border-color: rgba(255, 255, 255, 0);
+              	border-top-color: #FFF;
+              	border-width: 1.1rem;
+              	margin-left: -1.1rem;
+              }
+          }
+          .infos{
+              font-size : 2.4rem;
+              line-height: 3rem;
+          }
+          .details{
+              margin-top: 1.5rem;
+              font-size : 1.8rem;
+              font-style: italic;
+
+          }
+          .tags{
+              margin-top: 1rem;
+              font-size : 1.8rem;
+              color : @clr-yellow;
+              font-style: normal;
+              font-weight: bold;
+              margin-left: auto;
+              span{
+                  display : inline-block;
+                  padding-right: 1rem;
+              }
+          }
+        }
+        &:hover > .tooltip{
+          display: block;
+        }
         &:not(:last-of-type):after{
             height: 8rem;
             width: 1rem;
