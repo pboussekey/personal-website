@@ -45,13 +45,21 @@ export class CvComponent implements OnInit {
                 title : "Experience",
                 icon : "i i-briefcase",
                 skills : [
+                  {
+                      title : "President of the United States",
+                      icon : "i i-star",
+                      infos : "Not yet",
+                      details : "",
+                      tags : [],
+                      points : 0
+                  },
                     {
                         title : "Fullstack developer",
                         logo : "twic.png",
                         infos : "2015 - Now / The Studnet / Monaco",
                         details : "Creation of a Learning Management System for Business Schools around the world.",
                         tags : ["PHP7", "MARIADB", "AngularJS", "Angular2JS", "NodeJS", "CSS3", "LESS", "GIT", "WCAG"],
-                        points : [2, 0]
+                        points : 3
                     },
 
                     {
@@ -59,7 +67,7 @@ export class CvComponent implements OnInit {
                         text : "PB",
                         infos : "2014 - Now / Freelance / Everywhere",
                         details : "Website creation.",
-                        points : [3, 0]
+                        points : 4
                     },
 
                     {
@@ -68,7 +76,7 @@ export class CvComponent implements OnInit {
                         infos : "2012 - 2014 / Agixis / Lyon",
                         details : "Maintenance and evolutions of the e-commerce website Modz.fr.",
                         tags : ["CSharpDotNET", "MVC", "Razor", "Entity", "SQLSERVER", "SVN", "WPF", "WINFORM", "SEO", "MongoDB"],
-                        points : [2, 2]
+                        points : 2
                     },
 
                     {
@@ -77,7 +85,7 @@ export class CvComponent implements OnInit {
                         infos : "2011 - 2012 / (R) Evolution Voyages / Lyon",
                         details : "Creation and maintenance of the company website.",
                         tags : ["PHP5", "HTML5", "CSS3"],
-                        points : [1, 1]
+                        points : 1
                     }
                 ]
             },
@@ -90,7 +98,7 @@ export class CvComponent implements OnInit {
                         logo : "epsi.png",
                         infos : "2011 - 2014 / EPSI Lyon",
                         details : "Alternating with a strong presence in company.",
-                        points : [3, 3]
+                        points : 3
                     },
 
                     {
@@ -98,7 +106,7 @@ export class CvComponent implements OnInit {
                         logo : "ucbl.png",
                         infos : "2009 - 2011 / IUT A Lyon I",
                         details : "Diploma of technician ES equivalent.",
-                        points : [2, 2]
+                        points : 2
                     },
 
                     {
@@ -106,13 +114,13 @@ export class CvComponent implements OnInit {
                         logo : "ucbl.png",
                         infos : "2007 - / Lyon 1 University ",
                         details : "First and second year of licence.",
-                        points : [2, 3]
+                        points : 2
                     },
 
                     {
                         title : "Scientific Baccalaureate",
                         infos : "2007 - / 2007 / Lycee de l'Oiselet ",
-                        points : [3, 3]
+                        points : 3
                     }
 
 
@@ -123,16 +131,22 @@ export class CvComponent implements OnInit {
                 icon : "i i-star",
                 skills : [
                    {
+                        title : "Korean",
+                        infos : "Would like to",
+                        points : 0
+                    },
+                   {
                         title : "English",
                         infos : "Professional working proficiency",
                         details : "Excelent understanding (TOEIC : 910)",
-                        points : [4, 5]
+                        points : 4
                     },
                    {
                         title : "French",
                         infos : "Mother tongue",
-                        points : [5, 5]
+                        points : 5
                     }
+
                 ]
             }
         ];
