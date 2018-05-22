@@ -1,0 +1,131 @@
+.content{
+    text-align: center;
+}
+
+.main-title{
+    background : #000;
+    font-size: 10rem;
+    color : #FFF;
+    padding : 2rem 8rem 2rem;
+    display: inline-block;
+    margin : 3rem auto 0;
+    position : relative;
+    z-index: 1;
+    @media(max-width:620px){
+        padding : 2rem 6rem 2rem;
+        font-size: 8rem;
+    }
+    @media(max-width:500px){
+        padding : 2rem 4rem 2rem;
+        font-size: 6rem;
+    }
+    @media(max-width:400px){
+        padding : 2rem;
+        font-size: 6rem;
+    }
+}
+.copyright{
+    color : #FFF;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: right;
+    margin-top: 2rem;
+    position : absolute;
+    bottom : -3rem;
+    right : 1rem;
+    .i{
+        font-size: 2rem;
+    }
+}
+
+.char{
+    position : absolute;
+    bottom : 0;
+    left : calc(~"50% - 16rem");
+    z-index: 1;
+}
+
+.moon{
+    border-radius: 50%;
+    position : absolute;
+    height : 20rem;
+    width : 20rem;
+    right : -5rem;
+    top : -1rem;
+    background : #FFF;
+    animation: moon 600s infinite linear;
+}
+
+.cloud{
+    height : 16rem;
+    width : 42rem;
+    position : absolute;
+    top : 10rem;
+    right : -42rem;
+    animation: cloud 60s infinite linear;
+    &#cloud2{
+        top : 25rem;
+        animation: cloud 50s infinite 25s linear;
+    }
+    &#cloud3{
+        top : 15rem;
+        animation: cloud 75s infinite 50s linear;
+    }
+}
+
+ul{
+    color : #FFF;
+    font-size: 4rem;
+    line-height: 8rem;
+    margin :  auto;
+    list-style-type: none;
+    text-align: center;
+    cursor : pointer;
+    display : block;
+    position : relative;
+    z-index : 1;
+    .i{
+        display : none;
+        position : absolute;
+        left : -3rem;
+        font-size: 3rem;
+        margin-right: 1rem;
+        
+    }
+    li{ 
+        padding-right: 4rem;
+        &#pressStart{
+            animation: pressStart 5s infinite linear;
+            line-height : 3rem;
+        }
+    }
+    li:hover{
+        .i{
+            display : block;
+        }
+    }
+    @media(max-width:500px){
+        font-size: 2.5rem;
+    }
+}
+
+
+@keyframes moon {
+    from { right : -20rem;}
+    to { right : 100%;}
+}
+
+@keyframes cloud {
+    from { right : -42rem;}
+    to { right : 100%;}
+}
+@keyframes pressStart {
+    0% { opacity : 1;}
+    30% { opacity : 1;}
+    40% { opacity : 0;}
+    50% { opacity : 1;}
+    80% { opacity : 1;}
+    90% { opacity : 0;}
+    100 { opacity : 1;}
+}
+

@@ -1,0 +1,24 @@
+<div class="content" fit-screen [minheight]="600">
+    <div class="main-title">
+        <div>PAUL</div>
+        <div>BOUSSEKEY</div>
+        <div class="copyright">
+            <span class="i i-copyright"></span> 1989 MONACO
+        </div>
+    </div>
+    <ul>
+        <li id="pressStart" *ngIf="!pressStart" (click)="pressStart=true">Press enter or click</li>
+        <li *ngIf="pressStart" [routerLink]="['/cv']"><span class="i i-hand-o-right"></span>CURRICULUM VITAE</li>
+        <li *ngIf="pressStart" ><span class="i i-hand-o-right"></span>PROJECTS</li>
+        <li *ngIf="pressStart" ><span class="i i-hand-o-right"></span>CONTACT</li>
+    </ul>
+</div>
+<div class="char">
+
+</div>
+<div class="moon"></div>
+<div class="cloud" id="cloud1"></div>
+<div class="cloud" id="cloud2"></div>
+<div class="cloud" id="cloud3"></div>
+<div building-generator [nbBuilding]="6" buildingState="secondPlan"></div>
+<div building-generator [nbBuilding]="8" buildingState="firstPlan"></div>

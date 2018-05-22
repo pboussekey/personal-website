@@ -1,0 +1,53 @@
+<div class="content" fit-screen [minheight]="800">
+    <div class="status">
+        <div class="char">
+
+        </div>
+        <div class="infos">
+            <div class="title">Paul BOUSSEKEY / Fullstack Developer / Lvl.{{ level }}</div>
+            <div class="xp">
+                <div class="xp-bar" [ngStyle]="{ 'width' : exp + '%' }">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cv">
+        <div class="categories">
+            <div *ngFor="let cat of cv; let index = index" class="category"
+            [ngClass]="{ selected : index === selected }" (click)="selected = index; category = cv[index] " >
+              {{ cat.title }}
+            </div>
+        </div>
+        <div  class="selected-category" [ngClass]="{ selected : index === 0 }" (click)="index > 0 ? (index === 1 ? toRight() : toLeft()) : true " >
+
+            <div class="skill" *ngFor="let skill of category.skills">
+                <div class="logo {{ skill.logo || skill.text ? '' : (skill.icon || category.icon) }}"
+                    [ngStyle]="{ 'background-image': skill.logo ? 'url(../assets/images/' + skill.logo + ')' : ''}">
+                    {{ skill.text }}
+                </div>
+                <div class="pts">
+                    {{ skill.points[0] }} /  {{ skill.points[1] ? skill.points[1] : '-' }}
+                </div>
+                <div class="label" *ngIf="!skill.link || index !== 0">
+                    <b>{{ skill.title }}</b>
+                    <div class="infos">{{ skill.infos }}</div>
+                    <div class="details" *ngIf="skill.details">{{ skill.details }} </div>
+                    <div class="tags" *ngIf="skill.tags">
+                        <span *ngFor="let tag of skill.tags">#{{tag}}</span>
+                    </div>
+                </div>
+                <a target="{{ skill.target }}" href="{{ skill.link }}" class="label" *ngIf="skill.link && index === 0">
+                    <b>{{ skill.title }}</b>
+                    <div class="infos">{{ skill.infos }}</div>
+                    <div class="details" *ngIf="skill.details">{{ skill.details }} </div>
+                    <div class="tags">
+                        <span *ngFor="let tag of skill.tags">#{{tag}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="remaing">Skill points remaining : 4</div>
+</div>

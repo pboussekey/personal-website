@@ -1,0 +1,54 @@
+@import "../../../assets/less/rules.less";
+
+:host{
+    background : #000;
+    position : relative;
+    padding : 1rem 0 9rem 1rem;
+    display : flex;
+    flex-wrap : wrap;
+    overflow : hidden;
+    -transform-origin: right bottom;
+    &.second-plan{
+        background-color : @clr-blue2;
+    }
+    .window{
+        width : 4rem;
+        height : 4rem;
+        margin : 0 1rem 1rem 0;
+        background-color : @clr-blue2;
+        &.on{
+            background-color : @clr-yellow;
+          
+            
+        }
+        &:not(.on).animate{
+            animation: window linear forwards;
+        }
+        
+        &.silhouette{
+              background-image: url("../../../assets/images/silhouette.png");
+              background-size: cover;
+              background-repeat: none;
+          }
+        
+    }
+    
+    .door{
+       position : absolute;
+       bottom : 0;
+       width : 4rem;
+       height : 8rem;
+       background : @clr-yellow;
+       
+       
+    }
+    
+}
+
+
+@keyframes window {
+    0% { background-color : @clr-blue2; background-image: none;}
+    99.9% { background-color : @clr-blue2; background-image: none;}
+    100% { background-color : @clr-yellow;}
+   
+}

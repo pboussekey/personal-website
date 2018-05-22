@@ -1,0 +1,27 @@
+<div class="content" fit-screen [minheight]="600">
+     <div class="box-column" [ngClass]="{ opened : selected === 0 }">
+        <div class="box" (click)="selected = 0">@
+            <a class="box-content" href="mailto://contact@paul-boussekey.com">
+            contact@paul-boussekey.com
+            </a>
+         </div>
+        
+        <div class="char"></div>
+    </div>
+     <div class="box-column"  [ngClass]="{ opened : selected === 1 }">
+          <div class="box  i i-linkedin" (click)="selected = 1">
+            <a class="box-content" href="https://www.linkedin.com/in/paulboussekey" target="_blank">
+                https://www.linkedin.com/in/paulboussekey
+            </a>
+         </div>
+        <div class="char"></div>
+    </div>
+     <div class="box-column" [ngClass]="{ opened : selected === 2 }">
+        <div class="box i i-github" (click)="selected = 2">
+            <a class="box-content" href="https://github.com/pboussekey" target="_blank">
+                https://github.com/pboussekey
+            </a>
+         </div>
+        <div class="char"></div>
+    </div>
+</div>

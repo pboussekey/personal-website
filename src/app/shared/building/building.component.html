@@ -1,0 +1,10 @@
+<div *ngFor="let window of windows; let index = index" 
+    class="window" 
+    [ngClass]="{ on : window < 25, silhouette : window === 1 || window === 25, animate : window < 200 }" 
+    [ngStyle]="{ 'animation-duration' : duration * 0.35 + window * 10  + 'ms' }"
+    >
+    
+</div>
+<div class="door" [ngStyle]="{ right : doorPlace+'px' }" *ngIf="doorPlace > 0">
+    
+</div>

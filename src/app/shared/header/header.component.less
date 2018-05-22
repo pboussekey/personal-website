@@ -1,0 +1,20 @@
+@import "../../../assets/less/rules.less";
+
+:host{
+    position : absolute;
+    top : 0;
+    left : 0;
+    display : flex;
+    padding : 1rem 0;
+    z-index : 5;
+    a{
+        padding : 0 1rem;
+        color : #FFF;
+        font-size: 2rem;
+        text-decoration: none;
+        &.current{
+            color : @clr-yellow;
+            cursor : initial;
+        }
+    }
+}

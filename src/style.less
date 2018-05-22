@@ -1,0 +1,55 @@
+html{    
+    height : 100%;
+    width : 100%;
+    font-size: 10px;
+    font-family: "bithigh";
+    text-transform: uppercase; 
+    box-sizing: border-box;
+    *{
+        box-sizing: inherit;
+    }
+}
+
+body{
+    height : 100%;
+    width : 100%;
+    margin : 0;
+    overflow-y : auto;
+    router-outlet + div {
+        background-image: url("assets/images/skyline2.png");
+        background-position : 0 100%;
+        background-repeat : repeat-x;
+        animation : background 60s linear infinite;
+        position : relative;
+        @keyframes background {
+            0% { background-position : 0 100%;}
+            100% { background-position : -2937px 100%;}
+        }
+    }
+    .content{
+        width : 100%;
+        overflow: visible;
+        display : flex;
+        flex-direction : column;
+    
+    }
+    
+    .char{
+        background-image: url("assets/images/char.gif");
+        background-size: cover;
+        height : 6.5rem;
+        width : 6rem;
+    }
+    .cloud{
+        background-image: url("assets/images/cloud.png");
+        background-size: cover;
+    }
+}
+
+a, a:hover, a:visited, a:focus{
+    color : #FFF;
+    text-decoration: none;
+}
+
+
+
