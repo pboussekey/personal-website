@@ -5,7 +5,7 @@ import { Directive, Input, HostBinding, HostListener } from '@angular/core';
   inputs : ['minheight'],
 })
 export class FitScreenDirective {
-  
+
     @Input() public minheight : number;
     @HostBinding('style.height') get getHeight() {
         return Math.max(window.innerHeight - 80, this.minheight) + "px";
@@ -13,7 +13,7 @@ export class FitScreenDirective {
     @HostListener('window:resize', ['$event'])
     onResize(event) {
     }
-    
+
   constructor() { }
 
 }

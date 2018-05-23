@@ -13,14 +13,17 @@
         </div>
     </div>
     <div class="cv">
-        <div class="categories">
-            <div *ngFor="let cat of cv; let index = index" class="category"
-            [ngClass]="{ selected : index === selected }" (click)="selected = index; category = cv[index] " >
-              {{ cat.title }}
-            </div>
-        </div>
         <div  class="selected-category" [ngClass]="{ selected : index === 0 }" (click)="index > 0 ? (index === 1 ? toRight() : toLeft()) : true " >
 
+            <div class="categories">
+                <button *ngFor="let cat of cv; let index = index" class="category {{ cat.icon }}"
+                [ngClass]="{ selected : index === selected }" (click)="selected = index; category = cv[index] " >
+
+                </button>
+                <div class="category-title">
+                  {{ category.title }}
+                </div>
+            </div>
             <div class="skill" *ngFor="let skill of category.skills" [ngClass]="{ disabled : skill.points === 0 }">
                 <div class="logo {{ skill.logo || skill.text ? '' : (skill.icon || category.icon) }}"
                     [ngStyle]="{ 'background-image': skill.logo ? 'url(../assets/images/' + skill.logo + ')' : ''}">
@@ -44,5 +47,4 @@
         </div>
 
     </div>
-    <div class="remaing">Skill points remaining : 4</div>
 </div>

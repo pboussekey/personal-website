@@ -1,22 +1,35 @@
 @import "../../assets/less/rules.less";
 
-@media(max-width : 800px){
+
+@media(max-width : 600px){
     .content{
-        padding : 0;
+        overflow-y: auto;
+
     }
 }
 
 .categories{
-  margin : 4rem 1rem 0 0;
   display: flex;
-  flex-direction: column;
+  width: 100%;
   .category{
-    font-size: 4rem;
+    font-size: 2rem;
     cursor: pointer;
     color : #FFF;
+    background: transparent;
+    border : none;
+    height : 4rem;
+    width : 4rem;
     &.selected{
       color : @clr-yellow;
     }
+    &:not(:last-of-type){
+      margin-right: 1rem;
+    }
+  }
+  .category-title{
+    font-size: 4rem;
+    margin-left: auto;
+
   }
 }
 
@@ -49,50 +62,15 @@
     }
 }
 .cv{
-    display: flex;
     margin : 4rem 0;
     color : #FFF;
     flex-shrink : 0;
     @media(max-width : 800px){
-        margin : 0;
         position : initial;
     }
     position: relative;
 }
 
-.arrow{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 2rem 2rem 2rem 0;
-    border-color: transparent @clr-yellow transparent transparent;
-    cursor : pointer;
-    margin-top : 1rem;
-    display : none;
-    z-index: 6;
-
-    &.left{
-        left : 1rem;
-        margin-right: 4rem;
-    }
-    &.right{
-        margin-left: 4rem;
-        border-width: 2rem 0 2rem 2rem;
-        border-color: transparent transparent transparent @clr-yellow;
-    }
-    @media(max-width : 800px){
-        display : inline-block;
-
-    }
-    @media(max-width : 600px){
-        &.left{
-            margin-right: 2rem;
-        }
-        &.right{
-            margin-left: 2rem;
-        }
-    }
-}
 
 .remaing{
     position : absolute;
@@ -108,7 +86,6 @@
     flex : 1;
     display : flex;
     flex-wrap: wrap;
-    margin-top : 4rem;
     background : @clr-darkblue;
     cursor : pointer;
     padding : 1rem;
@@ -127,12 +104,20 @@
 
     .skill{
         display : flex;
-        margin : 2rem 2rem 4rem;
-        width : 60%;
+        margin : 2rem 2rem 4rem 10%;
+        width : 50%;
         z-index: 1;
         position: relative;
         &.disabled{
-            opacity : 0.3;
+          .label, .logo{
+              opacity : 0.4;
+          }
+          &:after{
+              opacity : 0.2;
+          }
+          .pts{
+            display : none;
+          }
         }
         .logo{
             width : 4.2rem;
@@ -265,6 +250,7 @@
         }
         &:nth-of-type(2n){
           margin-left: 40%;
+          margin-right: 10%;
           &:after{
             transform: rotate(25deg);
             left : calc(~"20% - 0.5rem");
@@ -274,3 +260,8 @@
 
     }
 }
+
+
+  [footer]{
+    display : none;
+  }

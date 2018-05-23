@@ -46,9 +46,9 @@ export class CvComponent implements OnInit {
                 icon : "i i-briefcase",
                 skills : [
                   {
-                      title : "President of the United States",
-                      icon : "i i-star",
-                      infos : "Not yet",
+                      title : "Professor of Computer Science",
+                      icon : "i i-diploma",
+                      infos : "Maybe in another life",
                       details : "",
                       tags : [],
                       points : 0
@@ -105,7 +105,7 @@ export class CvComponent implements OnInit {
                         title : "DUT in computer science",
                         logo : "ucbl.png",
                         infos : "2009 - 2011 / IUT A Lyon I",
-                        details : "Diploma of technician ES equivalent.",
+                        details : "University diploma in technology.",
                         points : 2
                     },
 
@@ -135,6 +135,11 @@ export class CvComponent implements OnInit {
                         infos : "Would like to",
                         points : 0
                     },
+                       {
+                            title : "Spanish",
+                            infos : "Should know that",
+                            points : 1
+                        },
                    {
                         title : "English",
                         infos : "Professional working proficiency",
@@ -151,19 +156,6 @@ export class CvComponent implements OnInit {
             }
         ];
         this.category = this.cv[0];
-    }
-
-    toLeft(e){
-        this.cv = this.cv.splice(this.cv.length - 1, 1).concat(this.cv);
-        if(e){
-            e.stopPropagation();
-        }
-    }
-    toRight(e){
-        this.cv = this.cv.concat(this.cv.splice(0, 1));
-        if(e){
-            e.stopPropagation();
-        }
     }
 
 }
