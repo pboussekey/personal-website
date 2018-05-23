@@ -21,6 +21,10 @@
     width : 4rem;
     &.selected{
       color : @clr-yellow;
+      border-bottom: solid 1px @clr-yellow;
+    }
+    &:focus{
+      outline : none;
     }
     &:not(:last-of-type){
       margin-right: 1rem;
