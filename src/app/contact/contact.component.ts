@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent  {
     public selected : number;
-    public animated : bool;
+    public animated : boolean;
     public scale : number = 1;
     public left : any = 0;
 

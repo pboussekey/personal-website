@@ -56,10 +56,11 @@ export class CvComponent implements OnInit {
                     {
                         title : "Fullstack developer",
                         logo : "twic.png",
-                        infos : "2015 - Now / The Studnet / Monaco",
-                        details : "Creation of a Learning Management System for Business Schools around the world.",
+                        infos : "2015 - Now / TWIC / Monaco",
+                        details : "Creation of a Learning Management System connecting Business Schools around the world.",
                         tags : ["PHP7", "MARIADB", "AngularJS", "Angular2JS", "NodeJS", "CSS3", "LESS", "GIT", "WCAG"],
-                        points : 3
+                        points : 3,
+                        current : true
                     },
 
                     {

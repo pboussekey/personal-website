@@ -24,7 +24,7 @@
                   {{ category.title }}
                 </div>
             </div>
-            <div class="skill" *ngFor="let skill of category.skills" [ngClass]="{ disabled : skill.points === 0 }">
+            <div class="skill" *ngFor="let skill of category.skills" [ngClass]="{ disabled : skill.points === 0, current : skill.current }">
                 <div class="logo {{ skill.logo || skill.text ? '' : (skill.icon || category.icon) }}"
                     [ngStyle]="{ 'background-image': skill.logo ? 'url(../assets/images/' + skill.logo + ')' : ''}">
                     {{ skill.text }}

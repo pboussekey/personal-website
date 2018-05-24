@@ -11,6 +11,7 @@
     margin : 3rem auto 0;
     position : relative;
     z-index: 1;
+    border : solid 3px #FFF;
     @media(max-width:620px){
         padding : 2rem 6rem 2rem;
         font-size: 8rem;
@@ -90,20 +91,24 @@ ul{
         left : -3rem;
         font-size: 3rem;
         margin-right: 1rem;
-        
+
     }
-    li{ 
+    li{
         padding-right: 4rem;
         &#pressStart{
             animation: pressStart 5s infinite linear;
             line-height : 3rem;
         }
-    }
-    li:hover{
-        .i{
-            display : block;
+        &:hover{
+          .i{
+              display : block;
+          }
+        }
+        &:focus{
+          outline : none;
         }
     }
+
     @media(max-width:500px){
         font-size: 2.5rem;
     }
@@ -128,4 +133,3 @@ ul{
     90% { opacity : 0;}
     100 { opacity : 1;}
 }
-

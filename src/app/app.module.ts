@@ -25,7 +25,7 @@ import { ContactComponent } from './contact/contact.component';
     CvComponent,
     HeaderComponent,
     FitScreenDirective,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
