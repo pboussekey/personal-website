@@ -9,6 +9,7 @@
     <ul>
         <li id="pressStart" *ngIf="!pressStart" (click)="pressStart=true">Press enter or click</li>
         <li *ngIf="pressStart" [routerLink]="['/cv']"><span class="i i-hand-o-right"></span>CURRICULUM VITAE</li>
+        <li *ngIf="pressStart" [routerLink]="['/projects']"><span class="i i-hand-o-right"></span>PROJECTS</li>
         <li *ngIf="pressStart" [routerLink]="['/contact']"><span class="i i-hand-o-right"></span>CONTACT</li>
     </ul>
 </div>

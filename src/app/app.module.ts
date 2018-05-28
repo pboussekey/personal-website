@@ -14,6 +14,7 @@ import { CvComponent } from './cv/cv.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FitScreenDirective } from './shared/fit-screen/fit-screen.directive';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     FitScreenDirective,
     ContactComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
