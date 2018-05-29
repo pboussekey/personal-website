@@ -1,28 +1,30 @@
 <div class="content" fit-screen [minheight]="800">
   <div class="selection">
-    <div *ngIf="selected" class="selected-image">
-        <div *ngFor="let pixel of selected.avatar" class="pixel"
-        [ngClass]="{ colored : pixel === 0 }">
-        </div>
-    </div>
-      <div *ngIf="selected" class="selected-details">
+    <div *ngIf="selected" class="selected-image"
+      [ngStyle]="{ 'background-image': selected.image ? 'url(../assets/images/' + selected.image + ')' : ''}">
+
+      </div>
+      <div  class="selected-details">
             <b class="selected-title">{{ selected.title }}</b>
-            <a class="selected-link" href="{{ selected.url }}" target="_blank"> {{ selected.url }}</a>
             <div class="selected-desc">{{ selected.description }}</div>
             <div class="selected-tags">
                   <span *ngFor="let tag of selected.tags">#{{tag}}</span>
             </div>
       </div>
+      <a class="selected-link" href="{{ selected.url }}" target="_blank"> </a>
   </div>
   <div class="projects">
 
         <div *ngFor="let project of projects" class="project"
             [ngClass]="{ selected : project === selected, disabled : project.disabled }"
-            (click)="!project.disabled && (selected = project)"  >
-            <div *ngFor="let pixel of project.avatar" class="pixel"
-            [ngClass]="{ colored : pixel === 0 }">
-            </div>
+            (click)="!project.disabled && (selectProject(project))"  >
+            <div  class="selected"></div>
         </div>
   </div>
-  <div class="char"></div>
+  <div class="char">
+      <div class="bubble" id="bubble1"></div>
+      <div class="bubble" id="bubble2"></div>
+      <div class="bubble" id="bubble3"></div>
+      <div class="bubble" id="bubble4"></div>
+  </div>
 </div>
