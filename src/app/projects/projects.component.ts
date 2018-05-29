@@ -9,41 +9,54 @@ export class ProjectsComponent implements OnInit {
 
   public projects : any;
   public selected : any;
-  public timeout : any;
-  public imageIndex : any;
+  public timeoutImage : any;
+  public timeoutProject : any;
+  public imageIndex : number;
+  public projectIndex : number;
   constructor() { }
 
-  generateAvatar(){
-    var pixels = [];
-    for(var i = 0; i < 6; i++){
-        var bit1 = Math.floor((Math.random() * 3));
-        var bit2 = Math.floor((Math.random() * 3));
-        var bit3 = Math.floor((Math.random() * 3));
-        pixels = pixels.concat([bit1,bit2,bit3,bit3,bit2,bit1]);
+  pauseCarousel(){
+    if(this.timeoutProject){
+      clearTimeout(this.timeoutProject);
+      this.timeoutProject = null;
     }
-    return pixels;
   }
-
+  resumeCarousel(){
+    this.timeoutProject = setTimeout(this.changeProject.bind(this), 2000);
+  }
   changeImage(){
     this.imageIndex++;
     if(this.selected.images && this.selected.images.length <= this.imageIndex){
       this.imageIndex = 0;
     }
     this.selected.image = this.selected.images[this.imageIndex];
-    this.timeout = setTimeout(this.changeImage.bind(this), 5000);
+    this.timeoutImage = setTimeout(this.changeImage.bind(this), 4000);
+  }
+
+  changeProject(){
+    this.projectIndex++;
+    if(this.projects.length <= this.projectIndex){
+      this.projectIndex = 0;
+    }
+    this.selectProject(this.projects[this.projectIndex]);
   }
 
   selectProject(project){
     this.selected = project;
-    if(this.timeout){
-      clearTimeout(this.timeout);
-      this.timeout = null;
+    if(this.timeoutImage){
+      clearTimeout(this.timeoutImage);
+      this.timeoutImage = null;
+    }
+    if(this.timeoutProject){
+      clearTimeout(this.timeoutProject);
+      this.timeoutProject = null;
     }
     if(this.selected.images){
       this.selected.image = this.selected.images[0];
       this.imageIndex = 0;
-      this.timeout = setTimeout(this.changeImage.bind(this), 5000);
+      this.timeoutImage = setTimeout(this.changeImage.bind(this), 4000);
     }
+    this.timeoutProject = setTimeout(this.changeProject.bind(this), 10000);
   }
 
   ngOnInit() {
@@ -84,15 +97,9 @@ export class ProjectsComponent implements OnInit {
             tags : ["Unity3D"]
 
         }];
-    this.selectProject(this.projects[0]);
-    for(var i = 0; i < 16; i++){
-      if(i < this.projects.length){
-        this.projects[i].avatar = this.generateAvatar();
-      }
-      else{
-        //this.projects.push({ disabled : true});
-      }
-    }
+    this.projectIndex = 0;
+    this.selectProject(this.projects[this.projectIndex]);
+
   }
 
 }

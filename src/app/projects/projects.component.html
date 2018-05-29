@@ -1,5 +1,5 @@
 <div class="content" fit-screen [minheight]="800">
-  <div class="selection">
+  <div class="selection"  (mouseenter) ="pauseCarousel()"  (mouseleave) ="resumeCarousel()">
     <div *ngIf="selected" class="selected-image"
       [ngStyle]="{ 'background-image': selected.image ? 'url(../assets/images/' + selected.image + ')' : ''}">
 

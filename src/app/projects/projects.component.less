@@ -153,12 +153,12 @@
 .projects{
   display : flex;
   flex-wrap : wrap;
-  margin: 2rem auto 8rem;
+  margin: 1rem 2rem 9rem auto;
   padding : 0.5rem;
   .project{
     height : 5rem;
     width : 5rem;
-    border : solid 0.5rem @clr-yellow;
+    border : solid 0.5rem @clr-lightblue;
     border-radius: 50%;
     padding : 0.5rem;
     overflow: hidden;
@@ -168,7 +168,7 @@
     }
     .selected{
       display : none;
-      background: @clr-yellow;
+      background: #FFF;
       position: absolute;
       top: 0.5rem;
       bottom: 0.5rem;
@@ -182,10 +182,10 @@
         display : block;
       }
     }
-    &:hover{
+    &:not(.selected):hover{
       .selected{
         display : block;
-        background: #FFF;
+        opacity : 0.5;
       }
     }
     &:nth(2n){
