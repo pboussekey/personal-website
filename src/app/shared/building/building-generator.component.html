@@ -1,7 +1,8 @@
-<div building 
-     *ngFor="let b of buildings" 
-     [delay]="b.delay" 
+<div building
+     *ngFor="let b of buildings"
+     [delay]="b.delay"
      [duration]="duration"
+     class="{{buildingState}}"
      [@buildingState]="buildingState" >
-     
+
 </div>
