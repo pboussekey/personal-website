@@ -21,15 +21,22 @@ export class BuildingComponent implements OnInit {
 
     ngOnInit() {
         this.windows = [];
-        this.width = Math.floor(Math.random() * 6) * 50 + 400;
+        var coordinates = [];
+        this.width = Math.floor(Math.random() * 10) * 50 + 800;
         this.height = Math.floor(Math.random() * 14) * 50 + 400;
-        var windowWidth = (this.width) / 50;
-        var windowLength = windowWidth * (this.height - 150) / 50;
-        for(var i = 0; i < windowLength; i++){
-          var rand = Math.random() * 400;
-          if(rand < 100){
-            this.windows.push({ x :  Math.floor(i % windowWidth) * 50, y : Math.floor(i / windowWidth) * 50, value : rand });
+        var windowWidth = this.width / 50;
+        var windowHeight = this.height / 50 - 2;
+        var windowLength = windowWidth * (this.height - 100) / 50;
+        for(var i = 0; i < 100 && i < windowWidth * windowHeight * 0.8; i++){
+          var rand = Math.floor(Math.random() * 100);
+          var x = Math.floor(Math.random() * windowWidth);
+          var y = Math.floor(Math.random() * windowHeight);
+          while(coordinates.indexOf(x + '_' + y) !== -1){
+            x = Math.floor(Math.random() * windowWidth);
+            y = Math.floor(Math.random() * windowHeight);
           }
+          this.windows.push({ x :  x * 50, y : y * 50, value : rand });
+          coordinates.push(x + '_' + y);
         }
         this.doorPlace = Math.random() > 0.5 ? Math.max(10,Math.floor(Math.random() * (this.width / 50)) * 50 - 38) : 0;
         this.width+=12;

@@ -1,19 +1,19 @@
 @import "../../../assets/less/rules.less";
 
 :host{
+    overflow : hidden;
     .windows{
       width : 100%;
       height : 100%;
       position : relative;
       background : #000;
-      padding : 1rem 0 14rem 1rem;
+      padding : 1rem 0 9rem 1rem;
       display : flex;
       flex-wrap : wrap;
-      overflow : hidden;
       -transform-origin: right bottom;
       background-image: url("../../../assets/images/window.png");
       border : solid 1rem #000;
-      border-bottom : solid 14rem #000;
+      border-bottom : solid 9rem #000;
     }
 
     &.secondPlan > .windows{
@@ -34,22 +34,14 @@
           animation: window linear forwards;
         }
 
-        &.silhouette{
-              background-image: url("../../../assets/images/silhouette.png");
-              background-size: cover;
-              background-repeat: none;
-          }
-
     }
 
     .door{
        position : absolute;
-       bottom : -14rem;
+       bottom : -9rem;
        width : 4rem;
        height : 8rem;
        background : @clr-yellow;
-
-
     }
 
 }

@@ -2,10 +2,6 @@
 @media(max-width : 650px){
     .content{
         overflow-y: auto;
-        .char{
-          display: none;
-        }
-
     }
 }
 .content{
@@ -51,6 +47,27 @@
         border-width: 2px;
         animation : floating 1000ms ease-in infinite;
       }
+      @media(max-width : 650px){
+        &#bubble1{
+          left: 4.5rem;
+          bottom: 6.5rem;
+        }
+        &#bubble2{
+          left: 6rem;
+          bottom: 8rem;
+          height : 1.5rem;
+          width : 1.5rem;
+        }
+        &#bubble3{
+          left: 7rem;
+          bottom: 10rem;
+          height: 2rem;
+          width: 2rem;
+        }
+        &#bubble4{
+          display : none;
+        }
+      }
     }
   }
 }
@@ -82,7 +99,7 @@
     animation : portal2 4000ms cubic-bezier(0.6, 0.4, 0.6, 0.9) infinite;
   }
   @media(max-width : 800px){
-    flex-direction: column;
+    height : 40rem;
   }
   .selected-image{
     position : absolute;
@@ -111,7 +128,7 @@
     border-left: solid 1rem @clr-yellow;
     padding: 10% 10% 10% 2rem;
     z-index: 1;
-    transition : left 500ms ease-in;
+    transition : left 500ms ease-in, top 500ms ease-in;
     b{
       display : block;
       font-size : 3.4rem;
@@ -133,6 +150,26 @@
             font-size : 2.4rem;
         }
     }
+    @media(max-width : 650px){
+      left : 0;
+      width : 100%;
+      top : 40%;
+      border-left: none;
+      border-top: solid 1rem @clr-yellow;
+      padding: 2rem 10% 10% 10% ;
+      b{
+        font-size : 2rem;
+      }
+      .selected-desc{
+        margin : 1rem 0;
+        font-size: 1.4rem;
+      }
+      .selected-tags{
+          span{
+              font-size : 1.4rem;
+          }
+      }
+    }
   }
   .selected-link{
     position : absolute;
@@ -147,6 +184,16 @@
       left : 100%;
     }
 
+  }
+
+  @media(max-width : 650px){
+    &:hover{
+      .selected-details{
+        left : 0;
+        top : 100%;
+      }
+
+    }
   }
 }
 
@@ -198,7 +245,13 @@
   }
 
   @media(max-width : 650px){
-      width: 32.5rem;
+
+      margin : 3rem auto 3rem 6rem;
+      .project{
+        border-width : 2px;
+          height : 3rem;
+          width : 3rem;
+      }
   }
 }
 
