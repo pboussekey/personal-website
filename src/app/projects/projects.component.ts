@@ -83,7 +83,7 @@ export class ProjectsComponent implements OnInit {
 
         },
         {
-            title : "R-Evolution Voyages",
+            title : "(R)Evolution Voyages",
             url : "http://www.r-evolutionvoyages.com/",
             image : ["rev-screen.png"],
             description : "R-Evolution Voyages is travel agency in Cuba. I developped the first version of the website.",
@@ -92,6 +92,7 @@ export class ProjectsComponent implements OnInit {
         },
         {
             title : "Twins",
+            images : ["twins-screen.png", "twins-screen2.png", "twins-screen3.png"],
             url : "https://play.google.com/store/apps/details?id=com.ExoGame.Twins",
             description : "Twins is an Android 2D game where your goal is to find the common element between the 2 parts of the screen.",
             tags : ["Unity3D"]

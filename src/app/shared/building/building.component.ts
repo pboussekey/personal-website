@@ -27,7 +27,7 @@ export class BuildingComponent implements OnInit {
         var windowWidth = this.width / 50;
         var windowHeight = this.height / 50 - 2;
         var windowLength = windowWidth * (this.height - 100) / 50;
-        for(var i = 0; i < 100 && i < windowWidth * windowHeight * 0.8; i++){
+        for(var i = 0; i < 80 && i < windowWidth * windowHeight * 0.75; i++){
           var rand = Math.floor(Math.random() * 100);
           var x = Math.floor(Math.random() * windowWidth);
           var y = Math.floor(Math.random() * windowHeight);
