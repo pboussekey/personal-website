@@ -15,10 +15,10 @@ import {
   styleUrls: ['./building-generator.component.less'],
   animations : [
     trigger("buildingState", [
-        state("firstPlan", style({ right : "calc(100% + 40rem)" })),
-        state("secondPlan", style({ right : "calc(100% + 40rem)", transform : "scale(0.8)",  transformOrigin : 'bottom right', backgroundColor : '#004099' })),
-        transition("* => firstPlan", [style({ right : "-40rem" }), animate(15000)]),
-        transition("* => secondPlan", [style({ right : "-40rem", transform : "scale(0.8)", transformOrigin : 'bottom right', backgroundColor : '#004099' }), animate(20000)]),
+        state("firstPlan", style({ right : "calc(100% + 160rem)" })),
+        state("secondPlan", style({ right : "calc(100% + 160rem)", transform : "scale(0.8)",  transformOrigin : 'bottom right', backgroundColor : '#004099' })),
+        transition("* => firstPlan", [style({ right : "-160rem" }), animate(15000)]),
+        transition("* => secondPlan", [style({ right : "-160rem", transform : "scale(0.8)", transformOrigin : 'bottom right', backgroundColor : '#004099' }), animate(20000)]),
     ])]
 })
 export class BuildingGeneratorComponent implements OnInit {

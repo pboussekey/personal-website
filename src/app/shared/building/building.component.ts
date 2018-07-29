@@ -1,7 +1,7 @@
-import { 
-    Component, 
-    HostBinding, 
-    Input, 
+import {
+    Component,
+    HostBinding,
+    Input,
     OnInit
 } from '@angular/core';
 
@@ -16,16 +16,27 @@ export class BuildingComponent implements OnInit {
     @HostBinding("style.height.px") height : number;
     @Input() delay : number;
     @Input() duration : number;
-    public windows : number[] = [];
+    public windows : any[] = [];
     public doorPlace : number;
-    
+
     ngOnInit() {
         this.windows = [];
-        this.width = Math.floor(Math.random() * 4) * 50 + 200;
-        this.height = Math.floor(Math.random() * 8) * 50 + 200;
-        var windowLength = (this.width) / 50 * (this.height - 100) / 50;
-        for(var i = 0; i < windowLength; i++){
-          this.windows.push(Math.floor(Math.random() * 400));
+        var coordinates = [];
+        this.width = Math.floor(Math.random() * 10) * 50 + 800;
+        this.height = Math.floor(Math.random() * 14) * 50 + 400;
+        var windowWidth = this.width / 50;
+        var windowHeight = this.height / 50 - 2;
+        var windowLength = windowWidth * (this.height - 100) / 50;
+        for(var i = 0; i < 80 && i < windowWidth * windowHeight * 0.75; i++){
+          var rand = Math.floor(Math.random() * 100);
+          var x = Math.floor(Math.random() * windowWidth);
+          var y = Math.floor(Math.random() * windowHeight);
+          while(coordinates.indexOf(x + '_' + y) !== -1){
+            x = Math.floor(Math.random() * windowWidth);
+            y = Math.floor(Math.random() * windowHeight);
+          }
+          this.windows.push({ x :  x * 50, y : y * 50, value : rand });
+          coordinates.push(x + '_' + y);
         }
         this.doorPlace = Math.random() > 0.5 ? Math.max(10,Math.floor(Math.random() * (this.width / 50)) * 50 - 38) : 0;
         this.width+=12;
