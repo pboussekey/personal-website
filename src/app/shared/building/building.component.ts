@@ -23,7 +23,7 @@ export class BuildingComponent implements OnInit {
         this.windows = [];
         var coordinates = [];
         this.width = Math.floor(Math.random() * 10) * 50 + 800;
-        this.height = Math.floor(Math.random() * 14) * 50 + 400;
+        this.height = Math.min(Math.floor(screen.height / 50) + 1,Math.floor(window.innerHeight / 50) + 1, Math.floor(Math.random() * 14)) * 50 + 400;
         var windowWidth = this.width / 50;
         var windowHeight = this.height / 50 - 2;
         var windowLength = windowWidth * (this.height - 100) / 50;

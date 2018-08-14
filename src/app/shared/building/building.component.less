@@ -35,6 +35,10 @@
         }
         &:not(.on){
           animation: window linear forwards;
+
+          @media(max-width: 800px){
+            animation: none;
+          }
         }
 
     }

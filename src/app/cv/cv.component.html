@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="cv">
-        <div  class="selected-category" [ngClass]="{ selected : index === 0 }" (click)="index > 0 ? (index === 1 ? toRight() : toLeft()) : true " >
+        <div  class="selected-category" >
 
             <div class="categories">
                 <button *ngFor="let cat of cv; let index = index" class="category {{ cat.icon }}"

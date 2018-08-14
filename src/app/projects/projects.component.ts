@@ -43,6 +43,7 @@ export class ProjectsComponent implements OnInit {
 
   selectProject(project){
     this.selected = project;
+    this.projectIndex = this.projects.indexOf(project);
     if(this.timeoutImage){
       clearTimeout(this.timeoutImage);
       this.timeoutImage = null;
@@ -86,7 +87,7 @@ export class ProjectsComponent implements OnInit {
             title : "(R)Evolution Voyages",
             url : "http://www.r-evolutionvoyages.com/",
             image : ["rev-screen.png"],
-            description : "R-Evolution Voyages is travel agency in Cuba. I developped the first version of the website.",
+            description : "R-Evolution Voyages is travel agency speclialized in Cuba. I developped the first version of the website.",
             tags : ["PHP5", "MySQL", "JQuery"]
 
         },
